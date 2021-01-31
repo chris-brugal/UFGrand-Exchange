@@ -6,7 +6,7 @@ import moment from 'moment';
 
 import useStyles from './styles';
 
-const Post = ({ creator, createdAt, tags, message }) => {
+const Post = ({ post }) => {
     const classes = useStyles();
 
     return(
@@ -24,7 +24,9 @@ const Post = ({ creator, createdAt, tags, message }) => {
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
             <CardContent>
-                <Typography className={classes.title} variant="h5" gutterBottom>{post.message}</Typography>
+                <Typography className={classes.wantedClass} variant="h5" gutterBottom>{post.message}</Typography>
+                <Typography className={classes.description} variant="h5" gutterBottom>{post.message}</Typography>
+                <Typography className={classes.desiredSection} variant="h5" gutterBottom>{post.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => {}}>

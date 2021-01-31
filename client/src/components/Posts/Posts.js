@@ -15,7 +15,7 @@ const Posts = () => {
                 { posts.map((post) => (
                     // console.log(post)
                     <Grid key={post} item xs={12} sm={6}>
-                        <Post {post} />
+                        <Post {...post} />
                     </Grid>
                     
                 ))}
