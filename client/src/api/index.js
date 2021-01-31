@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+/*
 const API = axios.create({ baseURL: 'http://localhost:5000' });
 
 //attaches the users profile token to each API call
@@ -9,8 +9,17 @@ API.interceptors.request.use((req) => {
     }
   
     return req;
-});
+});*/
 
+//url pointing to the back end posts
+const url = 'http://localhost:5000/posts';
+export const fetchPosts = () => axios.get(url);
+export const createPost = (newPost) => axios.post(url, newPost); 
+export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
+export const deletePost = (id) => axios.delete(`${url}/${id}`)
+
+/*
+**dont delete this, this is to add later on***
 //url pointing to the back end posts
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
@@ -20,3 +29,4 @@ export const deletePost = (id) => API.delete(`/posts/${id}`);
 
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
+*/
