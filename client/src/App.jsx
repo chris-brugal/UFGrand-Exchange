@@ -14,10 +14,10 @@ export default function PrimarySearchAppBar() {
         <Container>
             <Grid container alignItems="stretch" spacing={5}>
                 <Grid container item xs={8}>
-                    <Posts/>
+                    <Posts setCurrentId={setCurrentId}/>
                 </Grid>
                 <Grid item xs={4}>
-                    <Form/>
+                    <Form currentId={currentId} setCurrentId={setCurrentId} />
                 </Grid>
             </Grid>
         </Container>
