@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
+import { AppBar, Typography, Toolbar, Avatar, Button, requirePropFactory } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { IconButton, InputBase, MenuItem, Menu } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import useStyles from './styles';
+import logo from './favicon.ico';
 // import posts from '../Posts/Posts';
 
 const NavBar = () => {
@@ -44,11 +45,13 @@ const NavBar = () => {
             <Toolbar>
                 <IconButton
                     edge="start"
-                    className={classes.menuButton}
-                    color="inherit"
-                    aria-label="open drawer"
+                    // className={classes.menuButton}
+                    // color="inherit"
+                    // aria-label="open drawer"
                 >
-                    <MenuIcon />
+                    <img src={logo} width='40' onclick='() => {
+                        window.scrollTo(0,0)
+                    }'/>
                 </IconButton>
                 <Typography className={classes.title} variant="h6" noWrap>
                     Grand Exchange
