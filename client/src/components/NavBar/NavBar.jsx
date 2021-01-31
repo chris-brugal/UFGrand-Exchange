@@ -3,13 +3,14 @@ import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import { IconButton, InputBase, MenuItem, Menu } from '@material-ui/core';
-
+import { useSelector } from 'react-redux';
 import useStyles from './styles';
+// import posts from '../Posts/Posts';
 
 const NavBar = () => {
     const classes = useStyles();
+    const posts = useSelector((state) => state.posts);
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
@@ -64,7 +65,12 @@ const NavBar = () => {
                         }}
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
-                                console.log("Hello World!");
+
+                                // posts.forEach((post) => {
+                                //     if (post.courseNumber === classes.inputInput) {
+
+                                //     }
+                                // })
                             }
                         }}
                         inputProps={{ 'aria-label': 'search' }}
