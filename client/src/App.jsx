@@ -1,4 +1,5 @@
 import React from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import { Grid, Container, IconButton, Typography, AppBar, Toolbar, InputBase, MenuItem, Menu}  from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -80,12 +81,11 @@ export default function PrimarySearchAppBar() {
         <Container>
             <Grid container alignItems="stretch" spacing={5}>
                 <Grid container item xs={4}>
-            
+                    {/* <Posts/> */}
                 </Grid>
                 <Grid item xs={4}>
-        
+                   <Form/>
                 </Grid>
-
                 <Grid item xs={4}>
         
                 </Grid>
@@ -95,4 +95,3 @@ export default function PrimarySearchAppBar() {
   );
 }
 
-//export default App
