@@ -22,7 +22,7 @@ export default makeStyles({
     position: 'relative',
   },
   overlay: {
-    position: 'absolute',
+    position: 'relative',
     top: '20px',
     left: '20px',
     color: 'white',
@@ -37,6 +37,7 @@ export default makeStyles({
     display: 'flex',
   },
   details: {
+    float: 'right',
     display: 'flex',
     justifyContent: 'space-between',
     margin: '20px',

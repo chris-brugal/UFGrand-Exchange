@@ -19,8 +19,6 @@ const Form = ( {currentId, setCurrentId} ) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createPost(postData));
-        
         if (currentId === 0) {
             console.log('FORM SUBMITTED');
             dispatch(createPost({ ...postData, name: user?.result?.name }));
@@ -53,7 +51,6 @@ const Form = ( {currentId, setCurrentId} ) => {
         <Paper className={classes.paper}>
             <form autoComplete ="off" noValidate className = {`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
             <Typography variant="h6">What class do you wish for?</Typography>
-            <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
             <TextField name="wantedClass" variant="outlined" label="Wanted Class" fullWidth value={postData.wantedClass} onChange={(e) => setPostData({ ...postData, wantedClass: e.target.value })}/>
             <TextField name="description" variant="outlined" label="Description" fullWidth value={postData.description} onChange={(e) => setPostData({ ...postData, description: e.target.value })}/>
             <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })}/>

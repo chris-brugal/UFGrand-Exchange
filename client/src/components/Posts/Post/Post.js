@@ -22,19 +22,20 @@ const Post = ({ post, setCurrentId }) => {
             </div>
             {(user?.result?._id === post?.creator) && (
                 <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+                <Button style={{color: 'black'}} size="small" onClick={() => dispatch(deletePost(post._id))}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
             )}
-            <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
-            </div>
+            
             <CardContent>
                 <Typography className={classes.wantedClass} variant="h5" gutterBottom>{post.wantedClass}</Typography>
                 <Typography className={classes.description} variant="h5" gutterBottom>{post.description}</Typography>
                 <Typography className={classes.desiredSection} variant="h5" gutterBottom>{post.desiredSection}</Typography>
             </CardContent>
+            <div className={classes.details}>
+                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
+            </div>
             <CardActions className={classes.cardActions}>
                 {(user?.result?._id === post?.creator) && (
                 <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>

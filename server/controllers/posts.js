@@ -14,6 +14,18 @@ export const getPosts = async (req, res) => {
     }
 };
 
+export const getPost = async (req, res) => { 
+    const { id } = req.params;
+
+    try {
+        const post = await PostMessage.findById(id);
+        
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
 export const createPost = async (req, res) => {
     const post = req.body;
 
@@ -21,7 +33,7 @@ export const createPost = async (req, res) => {
 
     try {
         await newPostMessage.save();
-
+        console.log('CONTROLLER WORKS');
         res.status(201).json(newPostMessage );
     } catch (error) {
         res.status(409).json({ message: error.message });
