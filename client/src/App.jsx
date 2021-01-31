@@ -1,121 +1,77 @@
-// import React from 'react';
-// import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-
-// import Card from './components/SimpleCard';
-// import useStyles from './styles';
-// import Button from '@material-ui/core/Button';
-// import SearchBar from'./components/SearchBar.jsx'
-// import DehazeIcon from '@material-ui/icons/Dehaze';
-// import IconButton from '@material-ui/core/IconButton';
-
-// const App = () => {
-//     const classes = useStyles();
-//     return (
-//         <Container maxidth="lg">
-//             <AppBar className={classes.appBar} position="sticky" color="inherit">
-//                 <DehazeIcon edge="start" />
-//                 <Typography className={classes.heading} varient="h2" align="center">Class Exchange</Typography>
-//                 <SearchBar/>
-//                 <Button className={classes.Button} variant="contained" color="primary" size="small">Search</Button>
-//                 <Button className={classes.Button} variant="contained" color="primary" size="small">
-//                     Login
-//                 </Button>
-//             </AppBar>
-
-//             <Grow in>
-//                 <Container>
-//                     <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-//                         <Grid item xs={4}>
-//                             <Card/>
-//                             <Card/>
-//                             <Card/>
-//                         </Grid>
-//                         <Grid item xs={4}>
-//                             <Card/>
-//                         </Grid>
-//                         <Grid item xs={4}>
-//                             <Card/>
-//                         </Grid>
-//                     </Grid>
-//                 </Container>
-//             </Grow>
-//         </Container>
-//     );
-// }
-
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { Grid, Container, IconButton, Typography, AppBar, Toolbar, InputBase, MenuItem, Menu}  from '@material-ui/core';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
 import Card from './components/SimpleCard';
+import useStyles from './styles'
 
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: '70%',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+  // grow: {
+  //   flexGrow: 1,
+  // },
+  // menuButton: {
+  //   marginRight: theme.spacing(2),
+  // },
+  // title: {
+  //   display: 'none',
+  //   [theme.breakpoints.up('sm')]: {
+  //     display: 'block',
+  //   },
+  // },
+  // search: {
+  //   position: 'relative',
+  //   borderRadius: theme.shape.borderRadius,
+  //   backgroundColor: fade(theme.palette.common.white, 0.15),
+  //   '&:hover': {
+  //     backgroundColor: fade(theme.palette.common.white, 0.25),
+  //   },
+  //   marginRight: theme.spacing(2),
+  //   marginLeft: 0,
+  //   width: '100%',
+  //   [theme.breakpoints.up('sm')]: {
+  //     marginLeft: theme.spacing(3),
+  //     width: '70%',
+  //   },
+  // },
+  // searchIcon: {
+  //   padding: theme.spacing(0, 2),
+  //   height: '100%',
+  //   position: 'absolute',
+  //   pointerEvents: 'none',
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
+  // inputRoot: {
+  //   color: 'inherit',
+  // },
+  // inputInput: {
+  //   padding: theme.spacing(1, 1, 1, 0),
+  //   // vertical padding + font size from searchIcon
+  //   paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+  //   transition: theme.transitions.create('width'),
+  //   width: '100%',
+  //   [theme.breakpoints.up('md')]: {
+  //     width: '20ch',
+  //   },
+  // },
+  // sectionDesktop: {
+  //   display: 'none',
+  //   [theme.breakpoints.up('md')]: {
+  //     display: 'flex',
+  //   },
+  // },
+  // sectionMobile: {
+  //   display: 'flex',
+  //   [theme.breakpoints.up('md')]: {
+  //     display: 'none',
+  //   },
+  // },
+// }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
@@ -185,7 +141,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             edge="start"
