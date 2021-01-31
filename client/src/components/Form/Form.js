@@ -6,7 +6,7 @@ import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ( {currentId, setCurrentId} ) => {
-    const [postData, setPostData] = useState({ creator: '', wantedClass: '', description: '', tags: '', desiredSection: '' });
+    const [postData, setPostData] = useState({ wantedClass: '', description: '', tags: '', desiredSection: '' });
     const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -31,22 +31,21 @@ const Form = ( {currentId, setCurrentId} ) => {
     }
 
     const clear = () => {
-        //setCurrentId(0);
-        setPostData({creator: '', wantedClass: '', description: '', tags: '', desiredSection: ''});
+        setCurrentId(0);
+        setPostData({wantedClass: '', description: '', tags: '', desiredSection: ''});
     };
 
-    /*
+  /*
     //to make sure that the user is logged in before they can edit/create posts
     if (!user?.result?.name) {
-        return (
-          <Paper className={classes.paper}>
-            <Typography variant="h6" align="center">
-              Please sign in to create your own post.
-            </Typography>
-          </Paper>
-        );
-      }
-      */
+      return (
+        <Paper className={classes.paper}>
+          <Typography variant="h6" align="center">
+            Please Sign In to create your own posts.
+          </Typography>
+        </Paper>
+      );
+    }*/
 
     return(
         <Paper className={classes.paper}>

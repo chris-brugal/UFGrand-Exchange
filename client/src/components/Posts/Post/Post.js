@@ -17,7 +17,7 @@ const Post = ({ post, setCurrentId }) => {
     return(
         <Card className={classes.card}>
             <div className={classes.overlay}>
-                <Typography variant="h6" color="primary">{post.creator}</Typography>
+                <Typography variant="h6" color="primary">{post.name}</Typography>
                 <Typography variant="body2" color="primary">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             {(user?.result?._id === post?.creator) && (
