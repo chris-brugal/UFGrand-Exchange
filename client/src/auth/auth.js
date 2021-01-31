@@ -2,7 +2,7 @@ import React from 'react'
 import { Avatar, Button, Paper, Grid, Container, Typography, TextField } from '@material-ui/core'
 import LockedOutlinedIcon from '@material-ui/icons/LockedOutlined'
 import useStyles from './styles';
-import { signin, signup } from '../../actions/auth'
+import { signin, signup } from '../actions/auth'
 
 import Input from './Input';
 
