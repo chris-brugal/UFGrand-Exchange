@@ -1,19 +1,19 @@
 import React from 'react';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import MoreHorizIcon from '@material-ui/MoreHoriz';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 import useStyles from './styles';
 
-const Post = () => {
+const Post = ({ creator, createdAt, tags, message }) => {
     const classes = useStyles();
 
     return(
         <Card className={classes.card}>
             <div className={classes.overlay}>
-                <Typography variant="h6"{...post.creator} />
-                <Typography variant="body2"{...moment(post.createdAt).fromNow()}></Typography>
+                <Typography variant="h6" color="primary">{post.creator}</Typography>
+                <Typography variant="body2" color="primary">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
                 <Button style={{color: 'white'}} size="small" onClick={() => {}}>
@@ -33,7 +33,7 @@ const Post = () => {
                 </Button>
             </CardActions>
         </Card>
-
+        // console.log(creator)
     )
 }
 

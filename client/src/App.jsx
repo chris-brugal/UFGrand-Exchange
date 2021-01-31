@@ -44,6 +44,7 @@
 // }
 
 import React from 'react';
+//import { Provider } from 'react-redux'
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { Grid, Container, IconButton, Typography, AppBar, Toolbar, InputBase, MenuItem, Menu}  from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -52,6 +53,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
 import Card from './components/SimpleCard';
+//import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -247,14 +250,11 @@ export default function PrimarySearchAppBar() {
         <Container>
             <Grid container alignItems="stretch" spacing={5}>
                 <Grid container item xs={4}>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    {/* <Posts/> */}
                 </Grid>
                 <Grid item xs={4}>
-                    <Card/>
+                   <Form/>
                 </Grid>
-
                 <Grid item xs={4}>
                     <Card/>
                 </Grid>
@@ -264,4 +264,3 @@ export default function PrimarySearchAppBar() {
   );
 }
 
-//export default App
