@@ -8,6 +8,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 
 import Navbar from './components/NavBar/NavBar';
 import useStyles from './styles'
+import Posts from './components/Posts/Posts';
+import Form from './components/Form/Form';
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
