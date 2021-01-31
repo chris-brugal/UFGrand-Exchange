@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const postSchema = mongoose.Schema({
     wantedClass: String,
     description: String,
+    name: String,
     creator: String,
     tags: [String],
     desiredSection: Number,

@@ -9,16 +9,39 @@ const Form = () => {
     const [postData, setPostData] = useState({ creator: '', wantedClass: '', description: '', tags: '', desiredSection: '' });
     const classes = useStyles();
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         dispatch(createPost(postData));
+        /*
+        if (currentId === 0) {
+            dispatch(createPost({ ...postData, name: user?.result?.name }));
+            clear();
+        } else {
+            dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
+            clear();
+        }
+        */ 
     }
 
     const clear = () => {
+        setPostData({ title: '', message: '', tags: '', selectedFile: '' });
+    };
 
-    }
+    /*
+    //to make sure that the user is logged in before they can edit/create posts
+    if (!user?.result?.name) {
+        return (
+          <Paper className={classes.paper}>
+            <Typography variant="h6" align="center">
+              Please sign in to create your own post.
+            </Typography>
+          </Paper>
+        );
+      }
+      */
 
     return(
         <Paper className={classes.paper}>

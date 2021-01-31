@@ -9,6 +9,7 @@ import useStyles from './styles';
 
 const Post = ({ post }) => {
     const classes = useStyles();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     return(
         <Card className={classes.card}>
@@ -16,11 +17,13 @@ const Post = ({ post }) => {
                 <Typography variant="h6" color="primary">{post.creator}</Typography>
                 <Typography variant="body2" color="primary">{moment(post.createdAt).fromNow()}</Typography>
             </div>
-            <div className={classes.overlay2}>
+            {(user?.result?._id === post?.creator) && (
+                <div className={classes.overlay2}>
                 <Button style={{color: 'white'}} size="small" onClick={() => {}}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
+            )}
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
@@ -30,10 +33,11 @@ const Post = ({ post }) => {
                 <Typography className={classes.desiredSection} variant="h5" gutterBottom>{post.desiredSection}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => {}}>
-                    <DeleteIcon fontsize="small"/>
-                    Delete
+                {(user?.result?._id === post?.creator) && (
+                <Button size="small" color="secondary" onClick={() => {}}>
+                    <DeleteIcon fontSize="small" /> Delete
                 </Button>
+                )}
             </CardActions>
         </Card>
     )
