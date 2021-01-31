@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Grid, Container}  from '@material-ui/core';
 
 import Navbar from './components/NavBar/NavBar';
@@ -7,6 +7,7 @@ import Posts from './components/Posts/Posts';
 import { getPosts } from './actions/posts';
 import Form from './components/Form/Form';
 import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
