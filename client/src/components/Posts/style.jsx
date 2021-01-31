@@ -17,4 +17,4 @@ root: {
   },
 }));
 
-export default useStyle
+export default useStyle;
