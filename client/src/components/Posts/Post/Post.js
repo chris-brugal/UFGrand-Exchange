@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
@@ -35,7 +36,6 @@ const Post = ({ post }) => {
                 </Button>
             </CardActions>
         </Card>
-        // console.log(creator)
     )
 }
 

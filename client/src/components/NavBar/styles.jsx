@@ -67,7 +67,7 @@ const useStyle = makeStyles((theme) => ({
       width: '20ch',
     },
   },
-  sectionDesktop: {
+ sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
