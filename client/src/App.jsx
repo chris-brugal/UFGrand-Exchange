@@ -81,10 +81,10 @@ export default function PrimarySearchAppBar() {
         <Container>
             <Grid container alignItems="stretch" spacing={5}>
                 <Grid container item xs={4}>
-                    {/* <Posts/> */}
+                    <Posts/>
                 </Grid>
                 <Grid item xs={4}>
-                   <Form/>
+                    <Form/>
                 </Grid>
                 <Grid item xs={4}>
         
