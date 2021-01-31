@@ -6,14 +6,7 @@ import { useSelector } from 'react-redux';
 import Post from './Post/Post';
 import useStyles from './styles';
 
-<<<<<<< Updated upstream
 const Posts = ({setCurrentId}) => {
-=======
-const Posts = () => {
-    // const posts = [
-    //     {creator:'k', createdAt:'as',wantedClass:'hello'}, {wantedClass:'hello'},
-    // ]
->>>>>>> Stashed changes
     const posts = useSelector((state) => state.posts);
     const classes = useStyles();
 

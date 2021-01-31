@@ -31,7 +31,7 @@ const Form = ( {currentId, setCurrentId} ) => {
     }
 
     const clear = () => {
-        setCurrentId(0);
+        //setCurrentId(0);
         setPostData({creator: '', wantedClass: '', description: '', tags: '', desiredSection: ''});
     };
 
