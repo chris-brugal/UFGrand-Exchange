@@ -6,8 +6,11 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 import useStyles from './styles';
+import { useDispatch } from 'react-redux';
+import { deletePost } from '../../../actions/posts';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
+    const dispatch = useDispatch();
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
 
@@ -19,7 +22,7 @@ const Post = ({ post }) => {
             </div>
             {(user?.result?._id === post?.creator) && (
                 <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => {}}>
+                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
@@ -34,7 +37,7 @@ const Post = ({ post }) => {
             </CardContent>
             <CardActions className={classes.cardActions}>
                 {(user?.result?._id === post?.creator) && (
-                <Button size="small" color="secondary" onClick={() => {}}>
+                <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small" /> Delete
                 </Button>
                 )}
