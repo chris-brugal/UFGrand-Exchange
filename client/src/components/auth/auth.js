@@ -2,19 +2,28 @@ import React from 'react'
 import { Avatar, Button, Paper, Grid, Container, Typography, TextField } from '@material-ui/core'
 import LockedOutlinedIcon from '@material-ui/icons/LockedOutlined'
 import useStyles from './styles';
+import { signin, signup } from '../../actions/auth'
 
 import Input from './Input';
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormData] = useState(initialState);
 
     const isSignup = false;
-    const handleChange = () => {
-
-    }
+    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
+    const handleSubmit = () => {
+        if (isSignup) {
+            dispatch(signup(formData, history));
+          } else {
+            dispatch(signin(formData, history));
+          }
+    };
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
         setShowPassword(false);
