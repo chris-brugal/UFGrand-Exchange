@@ -11,4 +11,9 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  spinnyboi:{
+    position:'fixed',
+    top:'50%',
+    left:'33%',
+  },
 }));
